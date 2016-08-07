@@ -1,0 +1,51 @@
+<div class="page page-search" ng-controller="searchCtrl">
+
+	<!--<ol class="breadcrumb breadcrumb-small">
+		<li>Pages</li>
+		<li class="active"><a href="#/pages/search">Search</a></li>
+	</ol>-->
+
+
+	<div class="page-wrap" ng-init="search()">
+
+		<div class="row">
+			<div class="col-md-12">
+
+							<!-- search results -->
+				<div class="search-heading mb5 ml5">
+					<h4 class="text-light h5">
+					<strong>{{searchlist.counter}}</strong> results found :
+						<strong class="search-keyword text-normal">{{searchlist.text_search}}</strong>
+					</h4>
+				</div>
+
+
+				<!-- Search results -->
+				<div class="panel panel-lined mb20">
+					<div class="panel-body">
+						<div class="result mb20">  <!-- ng-repeat="search in searchResults" -->
+							<h4 class="mb0 text-info">{{searchResults.project_title}}</h4>
+							<!--<a href="javascript:;" class="small text-success">http://examplesite.com</a>-->
+							<p class="mt5 summary">{{searchResults.project_overview}}</p>
+							<p>
+								<a class="mt5 summary" ng-click="selectProjectId(searchResults.project_id)" href="#/pages/payment">buy for 35</a>
+							</p>
+							<div class="tags">
+								<span>Clasification:&nbsp;</span>
+								<label class="label label-primary">{{searchResults.project_clasification}}</label>
+							</div>
+							<hr/>
+						</div>
+
+
+						<pagination total-items="10" ng-model="currentPage" class="pagination"></pagination>
+					</div>
+				</div> <!-- #end search-results -->
+
+
+			</div>
+		</div> <!-- #end row -->
+
+	</div> <!-- #end page-wrap -->
+
+</div>
